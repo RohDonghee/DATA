@@ -87,7 +87,12 @@
 ~~~
 - 하나의 SQL 문 안에 포함된 SELECT 문을 표현 (서브쿼리는 외부쿼리 안에 중첩됨)
 - 서브쿼리는 괄호로 감싸져야 함.
-- SELECT문으로만 작성 가능 
+- SELECT문으로만 작성 가능
+- 
+## 서브쿼리 사용 이유
+- 테이블 : 영속적인 데이터를 저장
+- 뷰 : 영속적이지만 데이터는 저장하지 않음. 따라서 접근할 때마다 SELECT문이 실행됨
+- 서브쿼리 : 비영속적인 생존기간(스코프)이 SQL구문 실행 중으로 한정됨
 
 ## 서브쿼리 사용 가능한 외부 구문 
 ### SELECT (스칼라 서브쿼리, Scalar Subquery)
@@ -150,22 +155,30 @@ LEFT JOIN LATERAL (
 #### UPDATE - SET
 
 
-### 서브쿼리 사용 이유
-- 테이블 : 영속적인 데이터를 저장
-- 뷰 : 영속적이지만 데이터는 저장하지 않음. 따라서 접근할 때마다 SELECT문이 실행됨
-- 서브쿼리 : 비영속적인 생존기간(스코프)이 SQL구문 실행 중으로 한정됨
 
 
-
-# 2. CTE
-
+# 2. 공통 테이블 표현식(CTE)
 ~~~
 ✅ 학습 목표 :
 * CTE에 대한 문법을 이해하고 활용할 수 있다. 
 ~~~
+- CTE는 하나의 SQL문 내에서만 존재하는 이름 있는 임시 결과 집합
+```MySQL
+WITH 테이블 이름 AS (테이블 만들 쿼리문)
+``` 
 
-<!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
-
+```MySQL
+WITH avg_tip AS (
+  SELECT day, AVG(tip) AS avg_tip
+  FROM tips
+  GROUP BY day
+)
+SELECT t.day, t.time, t.total_bill, t.tip
+FROM tips t
+JOIN avg_tip a ON a.day = t.day
+WHERE t.tip > a.avg_tip
+ORDER BY t.day, t.tip DESC;
+```
 
 
 
