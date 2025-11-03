@@ -1,151 +1,242 @@
+# SQL_ADVANCED 1주차 정규 과제 
 
-# SQL_BASIC 1주차 정규 과제 
+## Week 1 : 서브쿼리 & CTE
 
-📌SQL_BASIC 정규과제는 매주 정해진 분량의 `초보자를 위한 BigQuery(SQL) 입문` 강의를 듣고 간단한 문제를 풀면서 학습하는 것입니다. 이번주는 아래의 **SQL_Basic_1st_TIL**에 나열된 분량을 수강하고 `학습 목표`에 맞게 공부하시면 됩니다.
+📌**SQL_ADVANCED 정규과제**는 매주 정해진 주제에 따라 **MySQL 공식 문서 또는 한글 블로그 자료를 참고해 개념을 정리한 후, 프로그래머스 SQL 3문제**와 **추가 확인문제**를 직접 풀어보며 학습하는 과제입니다. 
 
-**1주차 과제**에서는 수강한 내용을 모두 요약 정리하기보다는, **SQL이 왜 필요한지에 대해 배우고 느낀 점, 그리고 강의를 듣고 본인이 원하는 목표를 중심으로 작성**하여 과제 업로드 시트에 깃허브 링크를 스프레드시트 'SQL' 시트에 붙여서 넣어주세요. 
+이번 주는 아래의 **SQL_ADVANCED_0th_TIL**에 나열된 주제를 중심으로 개념을 학습하고, 주차별 **학습 목표**에 맞게 정리해주세요. 정리한 내용은 GitHub에 업로드한 후, **스프레드시트의 'SQL' 시트에 링크를 제출**해주세요. 
 
-**👀(수행 인증샷은 필수입니다.)** 
 
-## SQL_BASIC_1st_TIL
 
-### 섹션 2. BigQuery 기초 지식
+**👀 (수행 인증샷은 필수입니다.)** 
 
-### 1-1. BigQuery 기초 지식
+> 프로그래머스 문제를 풀고 '정답입니다' 문구를 캡쳐해서 올려주시면 됩니다. 
 
-### 1-2. BigQuery 환경 설정
 
-## 섹션 3. 데이터 탐색 - 조건, 추출, 요약
 
-### 2-1. 데이터 활용 Overview 
+## SQL_ADVANCED_1st_TIL 
 
-### 2-2. 저장된 데이터 확인하기
+### 15.2.15. SubQueries
 
-## 🏁 강의 수강 (Study Schedule)
+#### 특히 15.2.15.1 ~ 15.2.15.7 (Scalar, EXISTS, Correlated, Derived 등) 
 
-| 주차  | 공부 범위              | 완료 여부 |
-| ----- | ---------------------- | --------- |
-| 1주차 | 섹션 **1-1** ~ **2-2** | ✅         |
-| 2주차 | 섹션 **2-3** ~ **2-5** | 🍽️         |
-| 3주차 | 섹션 **2-6** ~ **3-3** | 🍽️         |
-| 4주차 | 섹션 **3-4** ~ **4-4** | 🍽️         |
-| 5주차 | 섹션 **4-4** ~ **4-9** | 🍽️         |
-| 6주차 | 섹션 **5-1** ~ **5-7** | 🍽️         |
-| 7주차 | 섹션 **6-1** ~ **6-6** | 🍽️         |
+### 15.2.20 WITH (Common Table Expressions)
 
+- `WITH RECURSIVE`에 대한 내용은 추후에 공부합니다. 해당 링크에서 `WITH`에 해당하는 부분만 정리해보세요. 
+
+
+
+
+## 🏁 주차별 학습 (Study Schedule)
+
+| 주차  | 공부 범위               | 완료 여부 |
+| ----- | ----------------------- | --------- |
+| 1주차 | 서브쿼리 & CTE          | ✅         |
+| 2주차 | 집합 연산자 & 그룹 함수 | 🍽️         |
+| 3주차 | 윈도우 함수             | 🍽️         |
+| 4주차 | Top N 쿼리              | 🍽️         |
+| 5주차 | 계층형 질의와 셀프 조인 | 🍽️         |
+| 6주차 | PIVOT / UNPIVOT         | 🍽️         |
+| 7주차 | 정규 표현식             | 🍽️         |
 
 <br>
 
+
+### 공식 문서 활용 팁
+
+>  **MySQL 공식 문서는 영어로 제공되지만, 크롬 브라우저에서 공식 문서를 열고 이 페이지 번역하기에서 한국어를 선택하면 번역된 버전으로 확인할 수 있습니다. 다만, 번역본은 문맥이 어색한 부분이 종종 있으니 영어 원문과 한국어 번역본을 왔다 갔다 하며 확인하거나, 교육팀장의 정리 예시를 참고하셔도 괜찮습니다.**
+
+
+
+# 1️⃣ 학습 내용 
+
+> 아래의 링크를 통해 *MySQL 공식문서*로 이동하실 수 있습니다.
+>
+> - SubQueries : MySQL 공식문서 
+>
+> https://dev.mysql.com/doc/refman/8.0/en/subqueries.html
+>
+> (한국어 버전)
+> https://dart-b-official.github.io/posts/mysql-subqueries/
+
+
+> - CTE(공통 테이블 표현식) : MySQL 공식문서
+>
+> https://dev.mysql.com/doc/refman/8.0/en/with.html
+>
+> (한국어 버전)
+> https://dart-b-official.github.io/posts/mysql-cte/
+
+<br>
+<br>
 <!-- 여기까진 그대로 둬 주세요-->
 
----
-
-# 1️⃣ 개념정리 
-<!-- 강의 수강 이후에 아래의 학습 목표에 맞게 개념을 자유롭게 정리해주세요.-->
-## 1-1. BigQuery 기본지식
-
-~~~
-✅ 학습 목표 :
-* 데이터 관련 기초 지식(OLTP, SQL, Row, Column, 저장 형태 등)을 설명할 수 있다. 
-* BigQuery 관련 기초 지식에 대해서 파악할 수 있다. 
-~~~
-
-### BigQuery
-- 기존 OLTP 체계의 속도, 기능 부족 문제로 인해 OLAP OLAP(On-line Analytical Processing)등장 <br> 
-- BigQuery 또한 OLAP 도구에 속하기 때문에 속도가 빠르나, 비용적 측면에서의 risk가 존재함. <br>
-- Firebase , GA를 연동하여 데이터를 쉽게 추출이 가능함. <br>
 
 
 
-## 2-1. 데이터 활용 Overview
 
-~~~
-✅ 학습 목표 :
-* 데이터를 활용하는 과정을 설명할 수 있다.
-* 데이터를 탐색하는 과정으로 조건과 추출, 요약을 할 수 있다. 
-~~~
-
-### Process 
-Task가 주어졌을 때를 시발점으로 하여, 원하는 것을 설정하고 그에 맞는 '적절한 데이터'를 탐색해야 한다. <br> 
-해당 데이터를 탐색 및 활용하는 과정에는 <b>조건(필터링), 추출, 반환, 요약</b>이라는 일련의 과정을 통해서 진행됨. <br> 
-이후, 데이터 결과를 검증하고 피드백 및 활용할 수 있다. <br> 
-
-
-## 2-2. 저장된 데이터 활용하기
-
-~~~
-✅ 학습 목표 :
-* 데이터가 저장되는 형태를 알고 저장된 데이터를 활용할 수 있다. 
-~~~
-
-
-### ERD (Entity Relationship Diagram)
-
-- <b>instance의 집합인 Entity들 간의 관계를 시각적으로 표현한 다이어그램</b> <br>    
-  <img width="737" height="241" alt="image" src="https://github.com/user-attachments/assets/911d031d-896e-4305-8f80-344a8cf302bb" /><br>
-- 관계의 명칭은 관계 표현에 있어서 중요한 요소   <br>  
-- 그리기(도출) -> 배치 -> 관계 설정 -> 관계명 -> 참여도 및 선택성    <br> 
-
-### 유의점
-
-- Entity의 경우 최소 2개의 instance를 포함해야 한다(영속적으로 존재). <br>    
-- 유일 식별자를 가져야 함.   <br>  
-- 또한 명명할 때도 단수 명사를 권장하고, 약어 사용을 금하는 등 각 업무 주체간의 소통을 위한 규칙 필요.    <br> 
+# 2️⃣ 학습 내용 정리하기
 
 ---
-# 2️⃣ 학습 인증란
-<img width="1835" height="909" alt="Image" src="https://github.com/user-attachments/assets/7ba2b1ba-953a-455b-a92e-2c28f6fba545" />
+
+ # 1. 서브쿼리 (SubQuery)
+
+~~~
+✅ 학습 목표 :
+* SubQueries에 대한 문법을 이해하고 활용할 수 있다.  
+~~~
+- 하나의 SQL 문 안에 포함된 SELECT 문을 표현 (서브쿼리는 외부쿼리 안에 중첩됨)
+- 서브쿼리는 괄호로 감싸져야 함.
+- SELECT문으로만 작성 가능 
+
+## 서브쿼리 사용 가능한 외부 구문 
+### SELECT (스칼라 서브쿼리, Scalar Subquery)
+- 다른 테이블에서 값을 가져올 때 사용
+- 하나의 값만 리턴이 가능
+```MySQL
+SELECT
+  e.employee_id,
+  e.name,
+  (SELECT d.name
+   FROM departments d
+   WHERE d.department_id = e.department_id) AS department_name
+FROM employees e;
+
+```
+
+### FROM (인라인 뷰, Inline View)
+- FROM절에 쓰이는 서브쿼리는 반드시 AS로 별칭을 지정해야 함
+```MySQL
+SELECT dt.customer_id, dt.total_spent
+FROM (
+  SELECT o.customer_id, SUM(o.amount) AS total_spent
+  FROM orders o
+  GROUP BY o.customer_id
+) AS dt
+WHERE dt.total_spent > 100000;
+
+```
+
+### WHERE (중첩문 서브쿼리, Nested Subquery)
+```MySQL
+SELECT *
+FROM employees e
+WHERE e.department_id IN (
+  SELECT d.department_id
+  FROM departments d
+  WHERE d.location = 'SEOUL'
+);
+
+```
+
+
+### HAVING 
+- GROUP BY한 조건을 이후에 서브쿼리 기준으로 분류
+```MySQL
+SELECT c.customer_id, c.name, o_latest.amount AS last_amount
+FROM customers c
+LEFT JOIN LATERAL (
+  SELECT o.amount
+  FROM orders o
+  WHERE o.customer_id = c.customer_id
+  ORDER BY o.order_date DESC
+  FETCH FIRST 1 ROW ONLY
+) o_latest ON TRUE;
+
+```
+
+#### ORDER BY
+#### INSERT - VALUES
+#### UPDATE - SET
+
+
+### 서브쿼리 사용 이유
+- 테이블 : 영속적인 데이터를 저장
+- 뷰 : 영속적이지만 데이터는 저장하지 않음. 따라서 접근할 때마다 SELECT문이 실행됨
+- 서브쿼리 : 비영속적인 생존기간(스코프)이 SQL구문 실행 중으로 한정됨
+
+
+
+# 2. CTE
+
+~~~
+✅ 학습 목표 :
+* CTE에 대한 문법을 이해하고 활용할 수 있다. 
+~~~
+
+<!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
+
+
+
 
 
 <br>
+
 <br>
 
 ---
 
-# 3️⃣ 확인문제
+# 3️⃣ 실습 문제
+
+**두 문제 중에서 한 문제는 SubQuery와 CTE를 사용한 방법을 각각 활용해서 2개의 답변을 제시해주세요**
+
+## 프로그래머스 문제 
+
+https://school.programmers.co.kr/learn/courses/30/lessons/131123
+
+> 즐겨찾기가 가장 많은 식당 정보 출력하기 (GROUP BY, SubQuery) : Lev 3
+
+https://school.programmers.co.kr/learn/courses/30/lessons/131115
+
+> 가격이 제일 비싼 식품의 정보 출력하기 (SUM, MAX, MIN, SubQuery) : Lev 2
+
+
+
+---
+
+## 문제 인증란
+
+<!-- 이 주석을 지우고 여기에 문제 푼 인증사진을 올려주세요. -->
+
+
+
+---
+
 
 ## 문제 1
 
-> **🧚Q. 포켓몬 게임이나 이커머스 산업과 같이 다양한 산업에서는 각기 다른 데이터가 존재합니다. 다음 중 하나의 산업을 선택하고, 해당 산업에서 수집하고 활용될 수 있는 데이터 항목 (칼럼) 5가지를 자유롭게 상상하여 나열해보세요.**
->
-> - 예시 산업 
->
-> >  온라인 음식 배달 / 스마트 헬스 케어 / 중고 거래 앱 / 교육 플랫폼 등 
+> **🧚예린이는 최근 여러 주문 데이터를 분석하는 업무를 맡게 되었습니다. 특정 고객의 주문 이력을 분석하기 위해, 다음과 같이 최근 30일간 주문만 필터링한 CTE를 사용해 쿼리를 작성했습니다.**
+
+~~~sql
+WITH RecentOrders AS (
+  SELECT *
+  FROM Orders
+  WHERE order_date >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)
+)
+SELECT customer_id, COUNT(*) AS recent_order_count
+FROM RecentOrders
+GROUP BY customer_id;
+~~~
+
+> **그런데 예린이는 "이 쿼리를 WITH 없이, 서브쿼리 방식으로 바꿔서 실행해보라" 는 피드백을 받았고, 서브쿼리로 작성해보려 했지만 익숙하지 않아 SQL_ADVANCED를 듣는 학회원분들에게 도움을 요청하고 있습니다. 예린이의 쿼리를 WITH 없이 서브쿼리로 변환해보세요. 그리고 두 방식의 차이점을 설명해보고, 각각의 장단점을 정리해보세요**
+
 
 
 ~~~
-스마트 헬스케어 : 웨어러블 기기와의 연동을 통해 혈압, 혈당, 심박수, 수면, 산소농도 등을 데이터(칼럼)을 확보할 수 있으며,
-대화를 통해 확보한 음성 정확성, 유창성, 어휘 능력 등의 부가적인 데이터(칼럼) 확보가 가능합니다.
-이를 바탕으로 확보한 데이터 및 의료 API를 근거로 하여 의료 데이터 학습 기반 자체 진단 AI 개발 가능합니다.
+여기에 답을 작성해주세요!
 ~~~
 
-<img width="667" height="349" alt="image" src="https://github.com/user-attachments/assets/a46b7770-768d-4868-809d-3078af47ada7" /> <br>
-<img width="670" height="250" alt="image" src="https://github.com/user-attachments/assets/800e0d6f-fbc7-4c90-9079-5986fba4e946" /> <br>
-~~~
-스마트 헬스케어로 인해 비대면 진료의 용이성, 진료 신속성 등이 향상되어 수용 가능한 환자가 증가함에 따라,
-Capacity의 평균적인 증가폭을 데이터로 확보가 가능할 것입니다.
-동시에, 지역보건의료정보시스템(PHIS)을 통하여 디지털 헬스케어로 인해 증가한 지자체 차원의 전자의무기록(EMR)과 관내 환자 이용 패턴 데이터를 함께 수집·분석함으로써,
-지역 의료 자원의 효율적 배분과 공공의료 정책 수립에 기여할 수 있습니다.
-~~~
-<img width="670" height="400" alt="image" src="https://github.com/user-attachments/assets/b18b2e13-611d-421a-843d-7c23a5c3f6c2" />
 
-## 문제 2
 
-> **🧚Q. 이번 강의를 통해 SQL이 왜 필요하다고 느끼는지, SQL을 통해 본인이 어떤 것을 해내고 싶은지를 자유롭게 작성해보세요.**
+## 참고자료
 
-~~~
-SQL은 RA에게 있어서 필수적인 도구라고 생각합니다.
-단순히 언론 보도를 종합하여 결과를 도출하는 것이 아닌, 정량적 데이터를 기반으로 시각화와 연계하여
-주장의 힘을 실어줄 수 있는 효과적인 도구라고 생각합니다.
-~~~
+서브쿼리를 사용하는 이유가 너무 어려우신 분들을 위해 참고자료를 첨부합니다. 아래 블로그를 통해서 더욱 쉽게 공부해보시고 문제를 풀어보세요.
 
+1. [SQL] 서브쿼리는 언제 쓰는걸까? 
+   https://project-notwork.tistory.com/38
+
+2. [SQLD] 서브 쿼리 (SubQeury) 개념 및 종류
+   https://bommbom.tistory.com/entry/%EC%84%9C%EB%B8%8C-%EC%BF%BC%EB%A6%ACSub-Query-%EA%B0%9C%EB%85%90-%EB%B0%8F-%EC%A2%85%EB%A5%98
 
 
 ### 🎉 수고하셨습니다.
-
-
-
-
-
-
-
