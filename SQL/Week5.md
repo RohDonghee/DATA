@@ -152,8 +152,9 @@ JOIN Employees M ON E.ManagerID = M.EmployeeID
 
 ## 문제 인증란
 
-<!-- 이 주석을 지우고 여기에 문제 푼 인증사진을 올려주세요. -->
+<img width="508" height="547" alt="image" src="https://github.com/user-attachments/assets/116d7d50-d76b-4060-a072-0178dea572d4" />
 
+<img width="1075" height="459" alt="image" src="https://github.com/user-attachments/assets/1fb53666-e840-4e81-a00e-2f5a44505f5e" />
 
 
 ---
