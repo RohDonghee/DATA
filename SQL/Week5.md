@@ -68,20 +68,48 @@
 ✅ 학습 목표 :
 * 'WITH RECURSIVE' 문법을 활용해 계층형 구조를 탐색할 수 있다.
 ~~~
+### 재귀 공통 테이블 표현식(RECURSIVE CTE)
+- 자신의 이름을 참조하는 서브쿼리를 가진 CTE
+- 자기 자신을 참조하는 CTE라면 WITH RECURSIVE로 시작
 
-<!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
+### 예시
+#### 단순 수열 
+```MySQL
+WITH RECURSIVE cte(n) AS (
+  SELECT 1
+  UNION ALL
+  SELECT n + 1 FROM cte WHERE n < 5
+)
+SELECT * FROM cte;
+```
 
+#### 피보나치 수열
+```MySQL
+WITH RECURSIVE fibonacci(n, fib_n, next_fib_n) AS (
+  SELECT 1, 0, 1
+  UNION ALL
+  SELECT n + 1, next_fib_n, fib_n + next_fib_n
+  FROM fibonacci
+  WHERE n < 10
+)
+SELECT * FROM fibonacci;
+```
 
+## 2. 셀프 조인 (SELF JOIN)
 
-## 2. 셀프 조인
 
 ~~~
 ✅ 학습 목표 :
 * 같은 테이블 내에서 상호 관계를 탐색할 수 있는 셀프 조인의 구조를 이해하고 사용할 수 있다. 
 ~~~
-
-<!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
-
+- JOIN은 공통된 열을 기점으로 테이블을 합치는 것
+- 같은 열에서 찾고자하는 정보가 있을 때 SELF JOIN을 사용
+  
+```MySQL
+SELECT E.EmployeeName AS Employee, M.EmployeeName AS Manager
+FROM Employees E
+JOIN Employees M ON E.ManagerID = M.EmployeeID
+```
 
 
 <br>
@@ -147,7 +175,35 @@ LEFT JOIN Employees e2 ON e1.manager_id = e2.id;
 
 
 ~~~
-여기에 답을 작성해주세요.
+WITH RECURSIVE org AS (
+  SELECT
+    id,
+    name,
+    manager_id,
+    1 AS depth
+  FROM Employees
+  WHERE manager_id IS NULL
+
+  UNION ALL
+
+  SELECT
+    e.id,
+    e.name,
+    e.manager_id,
+    o.depth + 1 AS depth
+  FROM Employees e
+  JOIN org o
+    ON e.manager_id = o.id
+)
+SELECT
+  o.id,
+  o.name,
+  m.name AS manager_name,  
+  o.depth
+FROM org o
+LEFT JOIN Employees m ON m.id = o.manager_id
+ORDER BY o.depth DESC, o.id;
+
 ~~~
 
 
