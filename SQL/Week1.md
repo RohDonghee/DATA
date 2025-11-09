@@ -80,15 +80,11 @@
 ---
 
  # 1. 서브쿼리 (SubQuery)
-
-~~~
-✅ 학습 목표 :
-* SubQueries에 대한 문법을 이해하고 활용할 수 있다.  
-~~~
+- 메인 쿼리(Outer Query)의 실행에 필요한 데이터를 제공하기 위해 사용되는 내부 쿼리(Inner Query)
 - 하나의 SQL 문 안에 포함된 SELECT 문을 표현 (서브쿼리는 외부쿼리 안에 중첩됨)
 - 서브쿼리는 괄호로 감싸져야 함.
-- SELECT문으로만 작성 가능
-- 
+- ```GROUP BY```를 제외한 모든 부분에서 사용이 가능함
+  
 ## 서브쿼리 사용 이유
 - 테이블 : 영속적인 데이터를 저장
 - 뷰 : 영속적이지만 데이터는 저장하지 않음. 따라서 접근할 때마다 SELECT문이 실행됨
@@ -97,40 +93,30 @@
 ## 서브쿼리 사용 가능한 외부 구문 
 ### SELECT (스칼라 서브쿼리, Scalar Subquery)
 - 다른 테이블에서 값을 가져올 때 사용
-- 하나의 값만 리턴이 가능
+- 하나의 행과 하나의 컬럼만을 반환
 ```MySQL
-SELECT
-  e.employee_id,
-  e.name,
-  (SELECT d.name
-   FROM departments d
-   WHERE d.department_id = e.department_id) AS department_name
-FROM employees e;
+SELECT [컬럼], (SELECT [컬럼] FROM [테이블] WHERE 조건) 
+FROM [테이블]
+WHERE 조건;
 
 ```
 
 ### FROM (인라인 뷰, Inline View)
+- 동적 테이블이기 때문에, DB에 저장되지 않음
+- 메인 쿼리가 데이터를 조회하기 위한 임시 테이블 또는 데이터 집합 역할을 수행
 - FROM절에 쓰이는 서브쿼리는 반드시 AS로 별칭을 지정해야 함
 ```MySQL
-SELECT dt.customer_id, dt.total_spent
-FROM (
-  SELECT o.customer_id, SUM(o.amount) AS total_spent
-  FROM orders o
-  GROUP BY o.customer_id
-) AS dt
-WHERE dt.total_spent > 100000;
+SELECT [컬럼]
+FROM (SELECT [컬럼] FROM [테이블] WHERE [조건]) AS [별명] 
+WHERE 조건;
 
 ```
 
 ### WHERE (중첩문 서브쿼리, Nested Subquery)
 ```MySQL
-SELECT *
-FROM employees e
-WHERE e.department_id IN (
-  SELECT d.department_id
-  FROM departments d
-  WHERE d.location = 'SEOUL'
-);
+SELECT [컬럼]
+FROM [테이블]
+WHERE [컬럼][연산자](SELECT [컬럼] FROM [테이블] WHERE 조건);
 
 ```
 
@@ -138,19 +124,24 @@ WHERE e.department_id IN (
 ### HAVING 
 - GROUP BY한 조건을 이후에 서브쿼리 기준으로 분류
 ```MySQL
-SELECT c.customer_id, c.name, o_latest.amount AS last_amount
-FROM customers c
-LEFT JOIN LATERAL (
-  SELECT o.amount
-  FROM orders o
-  WHERE o.customer_id = c.customer_id
-  ORDER BY o.order_date DESC
-  FETCH FIRST 1 ROW ONLY
-) o_latest ON TRUE;
+SELECT T1.C1, T2.C1, T2.C2
+FROM TEMP1 T1, TEMP2 T2
+WHERE T1.C1 = T2.C1
+GROUP BY T1.C1, T2.C1, T2.C2
+HAVING AVG(T1.C1) < (SELECT AVG(C1) FROM T2 );
 
 ```
 
 #### ORDER BY
+```MySQL
+SELECT *
+FROM TEMP1 T1
+ORDER BY C1;
+ 
+SELECT *
+FROM TEMP2 T2  
+ORDER BY (SELECT C1 FROM T1 WHERE T1.C2 = T2.C2);
+```
 #### INSERT - VALUES
 #### UPDATE - SET
 
@@ -180,12 +171,6 @@ WHERE t.tip > a.avg_tip
 ORDER BY t.day, t.tip DESC;
 ```
 
-
-
-
-<br>
-
-<br>
 
 ---
 
