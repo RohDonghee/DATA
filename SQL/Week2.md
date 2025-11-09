@@ -100,6 +100,22 @@
 - INTERSECT는 UNION, EXCEPT보다 우선 평가
 - UNION, INTERSECT는 교환법칙 성립
 
+### UNION과 UNION ALL의 차이
+#### UNION 
+| ID | NAME | AGE |
+| -- | ---- | --- |
+| 1  | 피카츄  | 20  |
+| 2  | 라이츄  | 20  |
+| 3  | 파이리  | 20  |
+
+#### UNION ALL 
+| ID | NAME | AGE |
+| -- | ---- | --- |
+| 1  | 피카츄  | 20  |
+| 2  | 라이츄  | 20  |
+| 2  | 라이츄  | 20  |
+| 3  | 파이리  | 20  |
+
 
 
 ## 2. 그룹함수
