@@ -113,7 +113,8 @@ https://leetcode.com/problems/reformat-department-table/description/
 
 ## 문제 인증란
 
-<!-- 이 주석을 지우고 여기에 문제 푼 인증사진을 올려주세요. -->
+<img width="905" height="599" alt="image" src="https://github.com/user-attachments/assets/54c0b624-52a3-49f8-ae6b-191394dd6021" />
+
 
 
 
