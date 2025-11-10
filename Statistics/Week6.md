@@ -182,7 +182,8 @@ X_robust = sc_robust.fit_transform(df[["x","y"]])
 >
 > > **인증 예시 : 통계 프로그램 결과, 시각화 이미지 캡처 등**
 
-<!-- 이 주석을 지우고 “실습 결과 화면(캡처)을 이곳에 첨부해주세요.-->
+<img width="1248" height="753" alt="image" src="https://github.com/user-attachments/assets/9d5da099-1769-4ee9-bfb1-6100402d2f63" />
+
 
 ~~~
 인증 이미지가 없으면 과제 수행으로 인정되지 않습니다.
