@@ -105,7 +105,8 @@
 
 ## 52. 레이아웃 패널
 ```
-- 그래프의 제목은 워크시트의 이름과 동일하며, 숨길 수 있음 
+- 그래프의 제목은 워크시트의 이름과 동일하며, 숨길 수 있음
+- 레이아웃 패널의 '계층 구조'를 확인하면 복잡하게 얽힌 컨테이너 구조를 한눈에 파악하고 수정하기에 용이
 ```
 
 
@@ -141,6 +142,7 @@
 - 대시보드 하나로는 부족한 경우, 1개 이상의 대시보드를 활용하여 데이터 표현 가능
 - 대시보드와 대시보드를 연결하여 표현 가능
 - '동작-시트로 이동' 과 같이 '동작-필터'를 적용해야, 양방향으로 반영이 됨. (ex. 모든 국가에 대한 데이터가 아닌 클릭한 특정 국가만 표현)
+- '요약 대시보드'에서 '상세 대시보드'로 넘어가는 드릴스루(Drill-through) 구조를 만들 때 필수적
 ```
 <img width="994" height="589" alt="image" src="https://github.com/user-attachments/assets/4dd98142-0cab-4f3a-9c4a-0e1dfc1684ce" />
 <img width="857" height="255" alt="image" src="https://github.com/user-attachments/assets/07a17128-1228-413f-a3ee-d6fac4af4740" />
@@ -150,6 +152,7 @@
 ```
 - 라인 그래프에서 시작 날짜와 종료 날짜를 필터를 통해 유동적으로 변경하여 시각화
 - 라인 그래프에서 선택 해제하여 다시 원본으로 변형 가능
+- 사용자가 차트 위에서 직접 클릭하여 기준점(Target)을 바꾸거나 비교 대상 기간을 변경하게 할 수 있어 고무적인 분석 도구
 ```
 <img width="490" height="471" alt="image" src="https://github.com/user-attachments/assets/2d88dead-eb6b-4b98-be17-e3fc150c9cb8" />
 <img width="488" height="477" alt="image" src="https://github.com/user-attachments/assets/4734f825-fec7-4985-a846-c4e89736acf2" />
