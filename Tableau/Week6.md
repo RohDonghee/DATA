@@ -163,14 +163,8 @@
 # 확인 문제
 
 오늘은 별도의 문제가 없습니다. 
+<img width="1914" height="989" alt="image" src="https://github.com/user-attachments/assets/840f3869-cfee-4c9b-adb3-62a1464673f1" />
 
-![alt text](https://raw.githubusercontent.com/DArt-B-Official/Tableau_Template/main/images/Week5-1.png)
-
-![alt text](https://raw.githubusercontent.com/DArt-B-Official/Tableau_Template/main/images/Week5-2.png)
-
-![alt text](https://raw.githubusercontent.com/DArt-B-Official/Tableau_Template/main/images/Week5-3.png)
-
-![alt text](https://raw.githubusercontent.com/DArt-B-Official/Tableau_Template/main/images/Week5-4.png)
 
 여러 대시보드를 참고하시어, superstore 데이터를 사용해 나만의 대시보드를 제작해주세요.
 
